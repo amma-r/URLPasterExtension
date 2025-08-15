@@ -8,11 +8,8 @@ let listItems = ""
 if(leadsFromLocalStorage)
 {
     urls = JSON.parse(localStorage.getItem("urls"))
-
+    renderUrls()
 }
-
-renderUrls()
-
 
 saveBtn.addEventListener("click", function() {
     getInputValue() 
