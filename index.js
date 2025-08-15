@@ -1,7 +1,9 @@
 const ulEl = document.getElementById("ul-el")
 const saveBtn = document.getElementById("save-el")
 const inputEl = document.getElementById("input-el")
-let leadsFromLocalStorage = localStorage.getItem("urls")
+const delBtn = document.getElementById("del-el")
+const leadsFromLocalStorage = localStorage.getItem("urls")
+const saveTabBtn = document.getElementById("save-tab")
 let urls = []
 let listItems = ""
 
@@ -39,3 +41,18 @@ function renderUrls()
     }
     ulEl.innerHTML = listItems
 }
+
+delBtn.addEventListener("click", function(){
+    localStorage.clear(); urls = []; renderUrls();
+})
+
+saveTabBtn.addEventListener("click", function()
+{
+
+chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    let tab = tabs[0].url
+    urls.push(tab)
+    localStorage.setItem("urls", JSON.stringify(urls))
+    renderUrls()
+    })  
+})

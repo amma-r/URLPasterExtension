@@ -59,3 +59,15 @@ li a
 {
     color:rgb(29, 119, 29); 
 }
+
+#del-el
+{
+    background-color: rgb(181, 68, 68);
+    margin-left: 0%;
+}
+
+#del-el:hover{
+    color: rgb(29, 119, 29);
+    background-color: rgb(219, 255, 219);
+    
+}

@@ -1,9 +1,13 @@
 {
   "manifest_version": 3,
   "name": "URL Paster",
+  
   "version": "1.0.0",
   "action": {
         "default_popup": "index.html",
         "default_icon": "images/logo.PNG"
-    }
+    },
+    "permissions": [
+        "tabs"
+    ]
 }
