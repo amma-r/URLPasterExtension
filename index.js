@@ -5,7 +5,7 @@ let leadsFromLocalStorage = localStorage.getItem("urls")
 let urls = []
 let listItems = ""
 
-if(leadsFromLocalStorage != null)
+if(leadsFromLocalStorage)
 {
     urls = JSON.parse(localStorage.getItem("urls"))
 
